@@ -159,7 +159,7 @@ main() {
     echo
     log_info "📊 Monitor results:"
     echo "   - WandB dashboard: https://wandb.ai/your-team/benchmark_vit"
-    echo "   - Local logs: ~/tbp/results/dmc/results/vit/logs_reproduction"
+    echo "   - Local logs: <repo_root>/.cache/dmc/results/vit/logs_reproduction"
     echo
     log_success "Happy experimenting! 🎉"
 }

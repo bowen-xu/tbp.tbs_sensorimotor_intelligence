@@ -37,7 +37,10 @@ from tbp.monty.frameworks.models.sensor_modules import (
 from tbp.monty.frameworks.utils.logging_utils import maybe_rename_existing_file
 
 # - Path Settings
-DMC_ROOT_DIR = Path(os.environ.get("DMC_ROOT_DIR", "~/tbp/results/dmc")).expanduser()
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DMC_ROOT_DIR = Path(
+    os.environ.get("DMC_ROOT_DIR", str(PROJECT_ROOT / ".cache" / "dmc"))
+).expanduser()
 DMC_PRETRAIN_DIR = DMC_ROOT_DIR / "pretrained_models"
 DMC_RESULTS_DIR = DMC_ROOT_DIR / "results"
 

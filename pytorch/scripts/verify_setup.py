@@ -82,13 +82,11 @@ def check_data_paths():
     """Check if data directories exist."""
     print("\n🔍 Checking data path configuration...")
     
-    # Get expected data directory from environment or default
-    home_dir = os.environ.get('HOME')
-    if not home_dir:
-        print("  ⚠️  HOME environment variable not set, skipping data check")
-        return True
-        
-    expected_data_dir = Path(home_dir) / "tbp" / "results" / "dmc" / "data" / "view_finder_images"
+    project_root = os.environ.get('PROJECT_ROOT')
+    if not project_root:
+        project_root = str(Path.cwd())
+
+    expected_data_dir = Path(project_root).parent / ".cache" / "dmc" / "view_finder_images"
     
     if not expected_data_dir.exists():
         print(f"  ⚠️  Expected data directory not found: {expected_data_dir}")

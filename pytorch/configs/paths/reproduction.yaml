@@ -14,15 +14,18 @@
 # path to root directory
 # this requires PROJECT_ROOT environment variable to exist
 # you can replace it with "." if you want the root to be the current working directory
-root_dir: ${oc.env:PROJECT_ROOT}
+root_dir: ${oc.env:PROJECT_ROOT}/..
+
+# project-local cache root
+cache_dir: ${paths.root_dir}/.cache
 
 # path to data directory
-data_dir: "${oc.env:HOME}/tbp/results/dmc/data/view_finder_images"
+data_dir: "${paths.cache_dir}/dmc/view_finder_images"
 
 # path to output directory, created dynamically by hydra
 # path generation pattern is specified in `configs/hydra/default.yaml`
 # use it to store all files generated during the run, like ckpts and metrics
 output_dir: ${hydra:runtime.output_dir}
 
-# path to logging directory - SEPARATE FROM DEFAULT TO AVOID CONFLICTS
-log_dir: "${oc.env:HOME}/tbp/results/dmc/results/vit/logs_reproduction" 
+# path to logging directory - separate from default to avoid conflicts
+log_dir: "${paths.cache_dir}/dmc/results/vit/logs_reproduction"

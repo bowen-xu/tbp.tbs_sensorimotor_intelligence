@@ -49,9 +49,9 @@ Available datasets:
 Notes:
   - Two environment variables determine where files are downloaded to.
     - `MONTY_DATA`: Path where the YCB dataset will be downloaded.
-                    Default: `~/tbp/data`
+                    Default: `<project_root>/.cache/data`
     - `DMC_ROOT_DIR`: Path where all other datasets will be downloaded.
-                      Default: `~/tbp/results/dmc`
+                      Default: `<project_root>/.cache/dmc`
   - If a requested dataset already exists, you will be prompted before it
     is overwritten. To force overwrite without prompting, use the `-f/--force` flag.
 
@@ -75,8 +75,13 @@ parser.add_argument(
 )
 
 # Environment variables.
-DMC_ROOT_DIR = Path(os.environ.get("DMC_ROOT_DIR", "~/tbp/results/dmc")).expanduser()
-MONTY_DATA = Path(os.environ.get("MONTY_DATA", "~/tbp/data")).expanduser()
+PROJECT_ROOT = Path(__file__).resolve().parent
+DMC_ROOT_DIR = Path(
+    os.environ.get("DMC_ROOT_DIR", str(PROJECT_ROOT / ".cache" / "dmc"))
+).expanduser()
+MONTY_DATA = Path(
+    os.environ.get("MONTY_DATA", str(PROJECT_ROOT / ".cache" / "data"))
+).expanduser()
 
 # DMC datasets.
 DMC_DATASETS = {

@@ -672,7 +672,7 @@ main() {
     echo
     log_info "📊 Results Analysis:"
     log_info "1. Check WandB project 'benchmark_vit' for detailed metrics"
-    log_info "2. Local results saved to: ~/tbp/results/dmc/results/vit/logs/"
+    log_info "2. Local results saved to: <repo_root>/.cache/dmc/results/vit/logs/"
     log_info "3. Compare with expected results in REPRODUCE_RESULTS.md"
     
     echo

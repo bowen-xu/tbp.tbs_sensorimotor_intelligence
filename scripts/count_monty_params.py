@@ -96,8 +96,8 @@ Data(
 import torch
 from typing import Union, List
 
-# Get the value of the DMC_ROOT_DIR environment variable, or use "~/tbp/results/dmc" as
-# the default if not set.
+# Get the value of the DMC_ROOT_DIR environment variable, or use
+# "<project_root>/.cache/dmc" as the default if not set.
 from data_utils import DMC_ROOT_DIR
 
 # We use the single-LM, distant-agent model.

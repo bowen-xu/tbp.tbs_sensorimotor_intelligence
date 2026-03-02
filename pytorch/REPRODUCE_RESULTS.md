@@ -60,7 +60,7 @@ python scripts/verify_setup.py
 
 The experiments expect data in the following structure:
 ```
-~/tbp/results/dmc/data/view_finder_images/
+<repo_root>/.cache/dmc/view_finder_images/
 ├── view_finder_32/
 │   └── view_finder_rgbd/
 ├── view_finder_base/
@@ -138,7 +138,7 @@ This runs:
 
 Training and evaluation outputs are saved to:
 ```
-~/tbp/results/dmc/results/vit/logs/<experiment_name>/
+<repo_root>/.cache/dmc/results/vit/logs/<experiment_name>/
 ├── checkpoints/          # Model checkpoints
 ├── inference/            # Evaluation results
 └── <experiment_name>.log # Training logs

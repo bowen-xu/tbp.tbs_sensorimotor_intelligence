@@ -116,7 +116,7 @@ def prepare_fig8b_data() -> pd.DataFrame:
     
     # ViT model configurations
     vit_models = ['b32', 'b16', 'l32', 'l16', 'h14']
-    vit_results_dir = Path("~/tbp/results/dmc/results/vit/logs").expanduser()
+    vit_results_dir = DMC_RESULTS_DIR / "vit" / "logs"
     
     # Process ViT models (both pretrained and random_init versions)
     for model in vit_models:

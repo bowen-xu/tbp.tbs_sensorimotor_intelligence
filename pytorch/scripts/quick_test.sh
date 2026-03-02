@@ -80,7 +80,8 @@ echo
 # Test 4: Quick evaluation
 echo "🔍 Test 4: Running evaluation on the trained model..."
 # Find the most recent checkpoint
-CHECKPOINT_DIR="$HOME/tbp/results/dmc/results/vit/logs_reproduction"
+CACHE_ROOT="$(cd "${PROJECT_ROOT}/.." && pwd)/.cache"
+CHECKPOINT_DIR="${CACHE_ROOT}/dmc/results/vit/logs_reproduction"
 LATEST_CHECKPOINT=$(find "$CHECKPOINT_DIR" -name "quick_test_*" -type d | sort | tail -1)
 
 if [ -z "$LATEST_CHECKPOINT" ]; then
