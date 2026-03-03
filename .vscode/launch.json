@@ -5,13 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Pdist_agent_1lm",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/monty",
+            "args": [
+                "-e", "dist_agent_1lm"
+            ]
+
+        },
+        {
             "name": "count_model_init_flops",
             "type": "debugpy",
             "request": "launch",
             "program": "scripts/count_model_init_flops.py",
             "console": "integratedTerminal",
             "args": [
-                "--experiment", "dist_agent_1lm_randrot_nohyp_x_percent_20p"
+                "--experiment",
+                "dist_agent_1lm_randrot_nohyp_x_percent_20p"
             ]
         }
     ]
