@@ -8,8 +8,11 @@
 # https://opensource.org/licenses/MIT.
 
 from tbp.monty.frameworks.run_env import setup_env
+from pathlib import Path
 
-setup_env()
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+setup_env(str(PROJECT_ROOT/"results"/"monty"), str(PROJECT_ROOT))
 
 # Load all experiment configurations from local project
 from configs import CONFIGS  # noqa: E402
